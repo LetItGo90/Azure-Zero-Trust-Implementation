@@ -1,1 +1,80 @@
+# Zero Trust Architecture Implementation in Azure
 
+## Project Objectives
+
+This project aims to implement a comprehensive Zero Trust security model in Azure that:
+
+1. Demonstrates practical implementation of Zero Trust principles in a cloud environment
+2. Provides a reference architecture that can be adapted to enterprise environments
+3. Showcases Azure security controls that support a Zero Trust approach
+4. Creates a documented, repeatable deployment process using infrastructure as code
+
+## Zero Trust Principles Implemented
+
+This implementation follows core Zero Trust principles:
+
+1. **Verify explicitly**: All access requests are authenticated and authorized based on all available data points
+   - Conditional Access policies with MFA
+   - Risk-based authentication
+   - Device compliance requirements
+
+2. **Use least privilege access**: Just-in-time and just-enough-access (JIT/JEA)
+   - Just-in-Time VM access
+   - Privileged access management
+   - Network segmentation with NSGs
+
+3. **Assume breach**: Minimize blast radius and segment access
+   - Network segmentation
+   - Lateral movement prevention
+   - Real-time monitoring and alerting
+
+## Resources to be Deployed
+
+The following Azure resources will be deployed:
+
+1. **Networking**
+   - Virtual Network with multiple subnets (frontend, backend)
+   - Network Security Groups with strict access rules
+   - Private endpoints for PaaS services
+
+2. **Compute**
+   - Virtual Machines with JIT access enabled
+   - Azure Bastion for secure management
+
+3. **Security Services**
+   - Microsoft Defender for Cloud (Standard tier)
+   - Key Vault for secret management
+   - Azure AD Conditional Access
+
+4. **Monitoring**
+   - Log Analytics workspace
+   - Security alerts and monitoring
+
+## Security Controls Implemented
+
+This architecture implements the following security controls:
+
+1. **Identity and Access Management**
+   - Multi-factor authentication for all users
+   - Conditional Access policies based on user, device, location, and risk
+   - Just-in-time VM access
+
+2. **Network Security**
+   - Network segmentation via subnets and NSGs
+   - Deny-by-default rules with explicit allow lists
+   - Micro-segmentation between application tiers
+
+3. **Data Protection**
+   - Encryption at rest and in transit
+   - Key management through Azure Key Vault
+   - Access control to data resources
+
+4. **Security Monitoring and Response**
+   - Centralized logging and monitoring
+   - Automated remediation for common issues
+   - Security alerts and notifications
+
+5. **Compliance Controls**
+   - Alignment with NIST SP 800-207 Zero Trust Architecture
+   - Continuous compliance monitoring
+   - Regular security assessments
